@@ -2,9 +2,9 @@
 /* eslint-disable no-unused-vars */
 
 
-const TodoCard = ({ key, index, todo}) => {
+const TodoCard = ({  index, todo}) => {
   return (
-    <tr key={key}>
+    <tr key={index}>
       <td>{index}</td>
       <td>{todo}</td>
     </tr>

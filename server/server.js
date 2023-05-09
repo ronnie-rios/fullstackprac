@@ -4,6 +4,8 @@ const app = express();
 
 const PORT = 9922;
 
+
+require("./config/mongoose.config");
 app.use(cors());
 app.use(express.json(), express.urlencoded({ extended: true }));
 

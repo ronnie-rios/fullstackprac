@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const Form = ({ postForm, errorState }) => {
   const [form, setForm] = useState({
-    todo: "",
+    name: "",
   });
 
   const formHandler = e => {
@@ -17,20 +17,20 @@ const Form = ({ postForm, errorState }) => {
     postForm(form);
     setForm({ todo: '' })
   }
-
+  console.log(form);
   return (
     <>
       <h2>Create a To-Do</h2>
       <form onSubmit={handleSumbit}>
         <input
           type="text"
-          name="todo"
-          value={form.todo}
+          name="name"
+          value={form.name}
           onChange={formHandler}
           placeholder="Finish project. . ."
         />
         <button>Add Todo</button>
-        {errorState ? errorState : ''}
+        {errorState ? errorState.msg : ''}
       </form>
     </>
   );

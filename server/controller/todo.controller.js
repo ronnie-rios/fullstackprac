@@ -11,6 +11,7 @@ module.exports.getAllTodos = async (req, res) => {
         const todos = await Todo.find();
         return res.json(todos);
     } catch (error) {
+        console.log(error);
         res.status(400).json({
             error: error,
             message: 'error getting all'

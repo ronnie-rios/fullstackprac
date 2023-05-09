@@ -29,7 +29,7 @@ const Home = () => {
         )}
         {todos &&
           todos.map((todo, index) => (
-            <TodoCard key={index} todo={todo} index={index} />
+            <TodoCard key={todo._id} todo={todo.name} index={index} />
           ))}
       </table>
     </div>

@@ -1,10 +1,10 @@
 import Form from '../components/Form';
 import { useState } from 'react';
-import { redirect  } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom';
 
 const CreatePage = () => {
     const [errState, setErrState] = useState();
-    // const navigate = useNavigate();
+     const navigate = useNavigate();
 
     const postForm = async formData => {
         const response = await fetch('http://localhost:9922/todos', {
@@ -17,10 +17,11 @@ const CreatePage = () => {
         
         if(!response.ok) {
             const errorData = await response.json();
+            console.log(errorData);
             let validator = errorData.message;
             setErrState({ msg: validator})
         } else {
-            redirect('/')
+            navigate('/')
         }
 
     }
