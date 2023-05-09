@@ -6,7 +6,7 @@ const findOne = async id => {
     return foundTodo;
 }
 
-module.exports.getAllPets = async (req, res) => {
+module.exports.getAllTodos = async (req, res) => {
     try {
         const todos = await Todo.find();
         return res.json(todos);
@@ -18,7 +18,7 @@ module.exports.getAllPets = async (req, res) => {
     }
 }
 
-module.exports.getOnePet = async (req, res) => {
+module.exports.getOneTodo = async (req, res) => {
     try {
         const id = req.params.id;
         const todo = await findOne(id);
