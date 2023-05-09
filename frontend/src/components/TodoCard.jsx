@@ -1,8 +1,13 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 
 
 const TodoCard = ({ key, index, todo}) => {
   return (
-    <div>TodoCard</div>
+    <tr key={key}>
+      <td>{index}</td>
+      <td>{todo}</td>
+    </tr>
   )
 }
 
